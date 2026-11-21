@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="ElectX - Production-Grade Decentralized Voting Protocol on Ethereum. Transparent, tamper-proof on-chain elections.">
+    <meta name="theme-color" content="#07090e">
+
+    <title>ElectX Protocol | Decentralized Governance & Voting</title>
+
+    <!-- Google Fonts: Plus Jakarta Sans & Space Grotesk -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome 6 Pro Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <!-- Main Production Stylesheet -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <!-- Ambient Background Glows & Dynamic Mesh -->
+    <div class="ambient-glow glow-top-left" aria-hidden="true"></div>
+    <div class="ambient-glow glow-center" aria-hidden="true"></div>
+    <div class="ambient-glow glow-bottom-right" aria-hidden="true"></div>
+    <div class="grid-overlay" aria-hidden="true"></div>
+
+    <!-- MAIN APP WRAPPER -->
+    <div class="app-container">
+
+        <!-- TOP NAVIGATION BAR -->
+        <header class="navbar">
+            <div class="navbar-inner">
+
+                <!-- Logo / Brand -->
+                <a href="#" class="brand-link">
+                    <div class="brand-emblem">
+                        <i class="fa-solid fa-bolt-lightning"></i>
+                        <span class="emblem-ring"></span>
+                    </div>
+                    <div class="brand-text">
+                        <span class="brand-name">Elect<span class="gradient-text">X</span></span>
+                        <span class="brand-tag">PROTOCOL v2.4</span>
+                    </div>
+                </a>
+
+                <!-- Centered Navigation Links -->
+                <nav class="nav-links">
+                    <a href="#overview" class="nav-link active">
+                        <i class="fa-solid fa-grid-2"></i>
+                        <span>Dashboard</span>
+                    </a>
+                    <a href="#candidates" class="nav-link">
+                        <i class="fa-solid fa-users-viewfinder"></i>
+                        <span>Candidates</span>
+                    </a>
+                    <a href="#analytics" class="nav-link">
+                        <i class="fa-solid fa-chart-line-up"></i>
+                        <span>Live Tally</span>
+                    </a>
+                    <a href="https://eth-sepolia.blockscout.com/address/0x8e75689c6a58A9051bb692526B113aB40b2cdaC3" target="_blank" rel="noopener noreferrer" class="nav-link external-link">
+                        <i class="fa-solid fa-cube"></i>
+                        <span>Contract</span>
+                        <i class="fa-solid fa-arrow-up-right-from-square mini-arrow"></i>
+                    </a>
+                </nav>
+
+                <!-- Actions: Network Pill & Connect Wallet -->
+                <div class="nav-actions">
+                    <div class="network-badge" id="networkPill">
+                        <span class="pulse-beacon" id="networkIndicator"></span>
+                        <span class="network-title" id="networkName">Sepolia Testnet</span>
+                    </div>
+
+                    <button id="connectWalletBtn" class="btn-connect-wallet">
+                        <div class="btn-shine"></div>
+                        <i class="fa-solid fa-wallet"></i>
+                        <span id="connectWalletBtnText">Connect Wallet</span>
+                    </button>
+                </div>
+
+            </div>
+        </header>
+
+        <!-- MAIN DASHBOARD CONTENT -->
+        <main class="main-body" id="overview">
+
+            <!-- PROTOCOL TICKER / CONTRACT ANNOUNCEMENT -->
+            <section class="contract-banner">
+                <div class="contract-banner-inner">
+                    <div class="banner-tag">
+                        <span class="live-dot"></span>
+                        <span>SMART CONTRACT</span>
+                    </div>
+                    <div class="banner-address-group">
+                        <span class="label">Sepolia Address:</span>
+                        <code class="contract-code" id="contractAddressDisplay">0x8e75689c6a58A9051bb692526B113aB40b2cdaC3</code>
+                        <button class="btn-copy" id="copyAddressBtn" title="Copy Contract Address">
+                            <i class="fa-regular fa-copy"></i>
+                        </button>
+                    </div>
+                    <div class="banner-badges">
+                        <span class="verified-pill"><i class="fa-solid fa-shield-check"></i> Sourcify Verified</span>
+                        <span class="verified-pill"><i class="fa-solid fa-lock"></i> Single-Vote Logic</span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- HERO & BENTO STATS SECTION -->
+            <section class="hero-bento-grid">
+
+                <!-- Primary Bento Card: Hero Banner -->
+                <div class="bento-card bento-hero">
+                    <div class="hero-backdrop"></div>
+                    <div class="hero-content">
+                        <div class="status-chip">
+                            <i class="fa-solid fa-globe"></i>
+                            <span>Decentralized Democratic Protocol</span>
+                        </div>
+                        <h1 class="hero-headline">
+                            Next-Generation <br>
+                            <span class="gradient-text">On-Chain Voting</span>
+                        </h1>
+                        <p class="hero-subline">
+                            ElectX delivers trustless, cryptographic election governance on Ethereum.
+                            Every ballot is irrevocably verified and permanently recorded by the smart contract.
+                        </p>
+                        <div class="hero-actions">
+                            <a href="#candidates" class="btn-primary">
+                                <i class="fa-solid fa-check-to-slot"></i>
+                                <span>Cast Your Ballot</span>
+                            </a>
+                            <a href="#analytics" class="btn-secondary">
+                                <i class="fa-solid fa-chart-pie"></i>
+                                <span>View Results</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Secondary Bento Card: Wallet Connection Status -->
+                <div class="bento-card bento-wallet">
+                    <div class="bento-header">
+                        <div class="bento-title-group">
+                            <span class="bento-eyebrow">AUTHENTICATION</span>
+                            <h3>Voter Identity</h3>
+                        </div>
+                        <div class="bento-icon-wrapper" id="walletStatusIcon">
+                            <i class="fa-solid fa-user-shield"></i>
+                        </div>
+                    </div>
+                    <div class="wallet-status-details">
+                        <div class="wallet-address-pill">
+                            <i class="fa-brands fa-ethereum eth-symbol"></i>
+                            <span id="walletAddress">No wallet connected</span>
+                        </div>
+                        <div class="wallet-connection-state" id="walletStatus">
+                            <span class="status-dot"></span>
+                            <span>Awaiting Connection</span>
+                        </div>
+                    </div>
+                    <div class="wallet-tip">
+                        <i class="fa-solid fa-circle-info"></i>
+                        <span id="walletTipText">Connect MetaMask to verify your voting eligibility.</span>
+                    </div>
+                </div>
+
+                <!-- Stat Card 1: Total Candidates -->
+                <div class="bento-card bento-stat">
+                    <div class="bento-stat-top">
+                        <span class="stat-label">CANDIDATES</span>
+                        <div class="stat-badge blue">
+                            <i class="fa-solid fa-id-card-clip"></i>
+                        </div>
+                    </div>
+                    <div class="stat-number-wrapper">
+                        <h2 class="stat-number" id="totalCandidates">--</h2>
+                    </div>
+                    <p class="stat-sub">Vetted on-chain candidates</p>
+                </div>
+
+                <!-- Stat Card 2: Total Votes Recorded -->
+                <div class="bento-card bento-stat">
+                    <div class="bento-stat-top">
+                        <span class="stat-label">BALLOTS CAST</span>
+                        <div class="stat-badge purple">
+                            <i class="fa-solid fa-layer-group"></i>
+                        </div>
+                    </div>
+                    <div class="stat-number-wrapper">
+                        <h2 class="stat-number" id="totalVotes">--</h2>
+                    </div>
+                    <p class="stat-sub">Immutable transactions verified</p>
+                </div>
+
+                <!-- Stat Card 3: User Voting Status -->
+                <div class="bento-card bento-stat">
+                    <div class="bento-stat-top">
+                        <span class="stat-label">YOUR STATUS</span>
+                        <div class="stat-badge green">
+                            <i class="fa-solid fa-fingerprint"></i>
+                        </div>
+                    </div>
+                    <div class="stat-number-wrapper">
+                        <h2 class="stat-number" id="votingStatus">--</h2>
+                    </div>
+                    <p class="stat-sub" id="votingStatusDescription">Connect wallet to verify</p>
+                </div>
+
+            </section>
+
+            <!-- TRANSACTION REAL-TIME STATUS FEEDBACK -->
+            <section id="transactionPanel" class="tx-feedback-panel hidden">
+                <div class="tx-feedback-inner">
+                    <div id="transactionIcon" class="tx-icon-box">
+                        <i class="fa-solid fa-spinner fa-spin"></i>
+                    </div>
+                    <div class="tx-content">
+                        <div class="tx-title-row">
+                            <h4 id="transactionTitle">Transaction Submitted</h4>
+                            <span class="tx-badge" id="txStateBadge">Processing</span>
+                        </div>
+                        <p id="transactionMessage" class="tx-message">Broadcasting to Ethereum network...</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- CANDIDATES NOMINEE BOARD -->
+            <section class="content-block" id="candidates">
+                <div class="section-title-bar">
+                    <div class="section-title-group">
+                        <span class="section-tag"><i class="fa-solid fa-check-double"></i> OFFICIAL BALLOT</span>
+                        <h2 class="section-heading">Election Candidates</h2>
+                        <p class="section-subheading">Select a vetted candidate and submit your vote to the smart contract.</p>
+                    </div>
+                    <div class="live-status-pill">
+                        <span class="status-dot"></span>
+                        <span>Synchronized with Sepolia</span>
+                    </div>
+                </div>
+
+                <!-- Dynamically populated candidate cards -->
+                <div id="candidateList" class="candidate-cards-container">
+                    <div class="empty-state-card">
+                        <div class="empty-icon-box">
+                            <i class="fa-solid fa-link-slash"></i>
+                        </div>
+                        <h3>Web3 Provider Standby</h3>
+                        <p>Connect your Ethereum wallet using the button above to load candidates directly from the smart contract.</p>
+                        <button class="btn-empty-action" onclick="document.getElementById('connectWalletBtn').click()">
+                            <i class="fa-solid fa-wallet"></i> Connect Wallet
+                        </button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- LIVE ELECTION ANALYTICS & LEADERBOARD -->
+            <section class="content-block" id="analytics">
+                <div class="section-title-bar">
+                    <div class="section-title-group">
+                        <span class="section-tag"><i class="fa-solid fa-chart-waterfall"></i> VERIFIABLE AUDIT</span>
+                        <h2 class="section-heading">Live Election Analytics</h2>
+                        <p class="section-subheading">Publicly verifiable vote distribution calculated from on-chain event logs.</p>
+                    </div>
+                    <div class="refresh-indicator">
+                        <i class="fa-solid fa-rotate"></i>
+                        <span>Auto-Refreshes On-Chain</span>
+                    </div>
+                </div>
+
+                <!-- Results Board Container -->
+                <div class="analytics-card">
+                    <div class="analytics-header">
+                        <div class="analytics-col">CANDIDATE</div>
+                        <div class="analytics-col center">VOTE SHARE</div>
+                        <div class="analytics-col right">BALLOTS / SHARE</div>
+                    </div>
+                    <div id="resultsList" class="analytics-rows">
+                        <div class="results-empty-state">
+                            <i class="fa-solid fa-chart-column"></i>
+                            <p>Live election results will compute here once wallet connection is established.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- PROTOCOL SECURITY & AUDIT FOOTER -->
+            <footer class="app-footer">
+                <div class="footer-top">
+                    <div class="footer-brand-info">
+                        <div class="footer-logo">
+                            <i class="fa-solid fa-bolt-lightning"></i>
+                            <span>Elect<span class="gradient-text">X</span></span>
+                        </div>
+                        <p class="footer-motto">
+                            Production-grade cryptographic election protocol designed for transparent governance.
+                        </p>
+                    </div>
+                    <div class="footer-links-grid">
+                        <div class="footer-link-group">
+                            <h5>Resources</h5>
+                            <a href="https://cloud.google.com/application/web3/faucet/ethereum/sepolia" target="_blank" rel="noopener">Sepolia Faucet</a>
+                            <a href="https://eth-sepolia.blockscout.com/address/0x8e75689c6a58A9051bb692526B113aB40b2cdaC3" target="_blank" rel="noopener">Contract Explorer</a>
+                            <a href="https://repo.sourcify.dev/11155111/0x8e75689c6a58A9051bb692526B113aB40b2cdaC3/" target="_blank" rel="noopener">Sourcify Verification</a>
+                        </div>
+                        <div class="footer-link-group">
+                            <h5>Security</h5>
+                            <span><i class="fa-solid fa-shield-halved"></i> Non-Custodial</span>
+                            <span><i class="fa-solid fa-lock"></i> Re-entrancy Safe</span>
+                            <span><i class="fa-solid fa-circle-check"></i> EIP-1193 Compatible</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="footer-bottom">
+                    <p>&copy; 2026 ElectX Protocol. Engineered by Akhilesh Butola. Open Source Web3 Architecture.</p>
+                    <div class="footer-chain-meta">
+                        <i class="fa-brands fa-ethereum"></i>
+                        <span>Ethereum Sepolia (Chain ID 11155111)</span>
+                    </div>
+                </div>
+            </footer>
+
+        </main>
+    </div>
+
+    <!-- TOAST NOTIFICATION CONTAINER -->
+    <div id="notification" class="toast-notification hidden" role="status" aria-live="polite">
+        <div class="toast-icon-wrapper" id="toastIconBox">
+            <i id="notificationIcon" class="fa-solid fa-circle-info"></i>
+        </div>
+        <div class="toast-body">
+            <span class="toast-title" id="toastTitle">System Alert</span>
+            <span id="notificationMessage" class="toast-text"></span>
+        </div>
+        <button class="toast-close-btn" onclick="document.getElementById('notification').classList.add('hidden')">
+            <i class="fa-solid fa-xmark"></i>
+        </button>
+    </div>
+
+    <!-- ETHERS.JS V6 UMD BUNDLE -->
+    <script src="https://cdn.jsdelivr.net/npm/ethers@6.13.4/dist/ethers.umd.min.js"></script>
+
+    <!-- SMART CONTRACT CONFIGURATION -->
+    <script src="js/contract.js"></script>
+
+    <!-- PRODUCTION APPLICATION LOGIC -->
+    <script src="js/app.js"></script>
+</body>
+</html>
